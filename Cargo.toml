@@ -1,6 +1,6 @@
 [package]
 name = "blackboard"
-version = "0.1.2"
+version = "0.1.4"
 edition = "2024"
 license = "Apache-2.0"
 description = "Blackboard collaboration plugin for mesh-llm"
@@ -11,7 +11,7 @@ anyhow = "1"
 biip = "0.9.2"
 clap = { version = "4", features = ["derive"] }
 dirs = "6.0.0"
-mesh-llm-plugin = { git = "https://github.com/Mesh-LLM/mesh-llm.git", branch = "codex/plugin-cli-commands" }
+mesh-llm-plugin = { git = "https://github.com/Mesh-LLM/mesh-llm.git", rev = "efd30516fd2cd92ac132dfd7b8341d24d412ee9c" }
 regex-lite = "0.1"
 reqwest = { version = "0.12", features = ["json"] }
 rmcp = { version = "1.2", features = ["server", "transport-io"] }

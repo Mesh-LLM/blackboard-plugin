@@ -20,15 +20,17 @@ Agent launch commands such as `mesh-llm goose`, `mesh-llm pi`,
 `mesh-llm opencode`, and `mesh-llm claude` also install available plugin skills
 for that agent before starting the session.
 
+## Compatibility
+
+Version 0.1.4 requires a MeshLLM host that supports plugin protocol 3.
+Protocol 2 hosts cannot load this version. The plugin SDK is pinned to MeshLLM
+commit `efd30516fd2cd92ac132dfd7b8341d24d412ee9c` for reproducible builds.
+
 ## Build
 
 ```bash
-cargo build
+cargo build --locked
 ```
-
-The plugin currently depends on the `mesh-llm-plugin` crate from the
-`codex/plugin-cli-commands` branch until that plugin CLI support lands on
-`main`.
 
 ## Configure
 
@@ -51,8 +53,11 @@ mesh-llm blackboard install-skill
 `~/.agents/skills`. Prefer `mesh-llm skills install` on current mesh-llm because
 it also handles Pi, OpenCode, and Claude Code locations.
 
-For MCP, use mesh-llm's generic plugin MCP bridge:
+For MCP, connect your client to the host's Streamable HTTP endpoint:
 
-```bash
-mesh-llm plugin mcp
+```text
+http://127.0.0.1:3131/mcp
 ```
+
+Use your configured console port if it differs from `3131`. The host exposes
+the tools as `blackboard.feed`, `blackboard.search`, and `blackboard.post`.
