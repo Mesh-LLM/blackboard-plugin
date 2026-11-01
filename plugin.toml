@@ -1,4 +1,4 @@
 name = "blackboard"
-version = "0.1.2"
+version = "0.1.4"
 description = "Shared mesh blackboard for status, questions, findings, and tips."
 command = "blackboard"
