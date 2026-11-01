@@ -32,6 +32,15 @@ commit `efd30516fd2cd92ac132dfd7b8341d24d412ee9c` for reproducible builds.
 cargo build --locked
 ```
 
+## Release
+
+Push a `v*` tag from a validated commit to publish a release. To recover an
+interrupted release, select the reviewed `main` branch in the `Release`
+workflow and enter the existing version tag. The selected branch supplies
+the workflow; builds check out `refs/tags/<version>`. Confirm that the tag
+still points to the validated commit and no release assets have been published
+before running it manually. macOS archives use the ARM64 `macos-15` runner.
+
 ## Configure
 
 ```toml
